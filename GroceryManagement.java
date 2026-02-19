@@ -33,8 +33,32 @@ public class GroceryManagement {
     public static void printInventory(String[] names, double[] prices, int[] stocks){
     }
 
-    public static void restockItem(String[] names, int[] stocks, String target, int amount){
+    /*
+    Function: restockItem()
+    Prerequisites: The arrays: names and stocks, must be of the same length.
+                   The values in arrays: names[i] and stocks[i], must represent the same object
 
+    Description: takes 4 inputs, an array of names, and array of stocks, a string target
+                 and an integer amount. This function searches names for target and adds
+                 amount to stocks at the same index where target was found in names.
+
+    Post: stocks will be changed by amount if target was found in names
+          "Item not found" will be printed if target was not found in names
+    */
+    public static void restockItem(String[] names, int[] stocks, String target, int amount){
+        boolean item_found = false;
+
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null && names[i].equals(target)) {
+                stocks[i] += amount;
+                item_found = true;
+                i = names.length; // exit loop
+            }
+        }
+
+        if (!item_found) {
+            System.out.println("Item not found");
+        }
     }
 
     public static void main(String[] args) {

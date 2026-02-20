@@ -62,7 +62,36 @@ public class GroceryManagement {
             }
         }
     }
+
+
+    /*
+    Function printInventory()
+    Prerequisites: The names, prices, and stocks must be of the same length.
+                   names[i], prices, and stocks[i] refer to the same item
+    
+    Description:
+            Iterates through the arrays and prints only the items which aren't null.
+    
+    Post:
+            Inventory items that are stored are printed.
+     */
     public static void printInventory(String[] names, double[] prices, int[] stocks){
+        boolean empty = true;
+
+        for (int i = 0; i < names.length; i++) {
+            
+            if (names[i] != null) {
+                empty = false;
+                System.out.println("Item Name: " + names[i]);
+                System.out.println("Price: $" + prices[i]);
+                System.out.println("Stock: " + stocks[i]);
+                System.out.println("-----------------------");
+            }
+
+            if (empty) {
+                System.out.println("Inventory is empty.");
+            }
+        }
     }
 
     /*
@@ -94,47 +123,47 @@ public class GroceryManagement {
     }
 
     public static void main(String[] args) {
-    String[] item_names = new String[10];
-    double[] item_prices= new double[10];
-    int[] item_stocks = new int[10]; 
+        String[] item_names = new String[10];
+        double[] item_prices= new double[10];
+        int[] item_stocks = new int[10]; 
 
-    Scanner sc = new Scanner(System.in);
-    System.out.println("-------------------------------------------------------------");
-    System.out.println("*******************Grocery_Stock_Management*******************");
-    System.out.println("-------------------------------------------------------------");
-    displayUI();
-    
-    char c;
-    c = sc.next().charAt(0);
-
-    while(true){
-        if(c == '1'){
-            String name;
-            double price;
-            System.out.println("Inside the add option");
-            addInventory(sc,item_names,item_prices,item_stocks);
-        }
-        else if (c == '2'){
-            printInventory(item_names,item_prices,item_stocks);
-        }
-
-        else if(c == '3'){
-            String target;
-            int amount;
-            System.out.println("Enter the target:-------");
-            target = sc.next();
-            System.out.println("Enter the amount: ");
-            amount = sc.nextInt();
-            restockItem(item_names,item_stocks,target,amount);
-        }
-        else if(c == '4'){
-            break;
-        }
-        else{
-            System.out.println("-------Enter the correct option---------");
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("-------------------------------------------------------------");
+        System.out.println("*******************Grocery_Stock_Management*******************");
+        System.out.println("-------------------------------------------------------------");
         displayUI();
+        
+        char c;
         c = sc.next().charAt(0);
-    }
+
+        while(true){
+            if(c == '1'){
+                String name;
+                double price;
+                System.out.println("Inside the add option");
+                addInventory(sc,item_names,item_prices,item_stocks);
+            }
+            else if (c == '2'){
+                printInventory(item_names,item_prices,item_stocks);
+            }
+
+            else if(c == '3'){
+                String target;
+                int amount;
+                System.out.println("Enter the target:-------");
+                target = sc.next();
+                System.out.println("Enter the amount: ");
+                amount = sc.nextInt();
+                restockItem(item_names,item_stocks,target,amount);
+            }
+            else if(c == '4'){
+                break;
+            }
+            else{
+                System.out.println("-------Enter the correct option---------");
+            }
+            displayUI();
+            c = sc.next().charAt(0);
+        }
     }
 }

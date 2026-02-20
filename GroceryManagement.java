@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class GroceryManagement {
 
-
-    /*
+    /**
     Function: displayUI()
 
     Prerequisites: None.
@@ -26,16 +25,16 @@ public class GroceryManagement {
         System.out.println("4:Exit: ");
     }
 
-/**
- * Searches for the first empty slot in names (where names[i] == null).
- * Prompts the user for item name, price, and stock quantity.
- * Stores values at the same index in all three arrays.
- *
- * @param sc Scanner used for user input
- * @param names array of item names
- * @param prices array of item prices
- * @param stocks array of stock quantities
- */
+    /**
+     * Searches for the first empty slot in names (where names[i] == null).
+     * Prompts the user for item name, price, and stock quantity.
+     * Stores values at the same index in all three arrays.
+     *
+     * @param sc Scanner used for user input
+     * @param names array of item names
+     * @param prices array of item prices
+     * @param stocks array of stock quantities
+     */
     public static void addInventory(Scanner sc,String[] names, double[] prices, int[] stocks){
         // Scanner sc = new Scanner(System.in);
         for(int i = 0;i<names.length;i++){
@@ -57,7 +56,7 @@ public class GroceryManagement {
         }
     }
 
-       /**
+    /**
      * Prints the current inventory items to the console.
      * <p>
      * For each index {@code i}, the method prints the item name, price, and stock

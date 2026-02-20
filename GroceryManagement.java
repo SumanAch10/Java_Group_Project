@@ -26,22 +26,16 @@ public class GroceryManagement {
         System.out.println("4:Exit: ");
     }
 
-
-    /*Prerequisites:
-    - sc must be a valid Scanner object.
-    - names, prices, and stocks must be the same length.
-    - names[i], prices[i], and stocks[i] represent the same item.
-    - At least one names[i] must be null to add a new item.
-
-    Description:
-    Searches for the first empty slot in names (where names[i] == null).
-    Prompts the user for item name, price, and stock quantity.
-    Stores the values at the same index in all three arrays.
-
-    Post:
-    - If an empty slot exists, the arrays are updated with the new item.
-    - If no empty slot exists, nothing is changed.
-    */
+/**
+ * Searches for the first empty slot in names (where names[i] == null).
+ * Prompts the user for item name, price, and stock quantity.
+ * Stores values at the same index in all three arrays.
+ *
+ * @param sc Scanner used for user input
+ * @param names array of item names
+ * @param prices array of item prices
+ * @param stocks array of stock quantities
+ */
     public static void addInventory(Scanner sc,String[] names, double[] prices, int[] stocks){
         // Scanner sc = new Scanner(System.in);
         for(int i = 0;i<names.length;i++){
@@ -62,6 +56,7 @@ public class GroceryManagement {
             }
         }
     }
+<<<<<<< feature-display
 
 
     /*
@@ -93,19 +88,40 @@ public class GroceryManagement {
             }
         }
     }
+=======
+>>>>>>> main
 
-    /*
-    Function: restockItem()
-    Prerequisites: The arrays: names and stocks, must be of the same length.
-                   The values in arrays: names[i] and stocks[i], must represent the same object
+        /**
+     * Prints the current inventory items to the console.
+     * <p>
+     * For each index {@code i}, the method prints the item name, price, and stock
+     * if {@code names[i] != null}. Empty slots are skipped.
+     * </p>
+     *
+     * @param names  array of item names
+     * @param prices array of item prices
+     * @param stocks array of item stock quantities
+     *
+     * @implNote This method does not modify any arrays.
+     */
 
-    Description: takes 4 inputs, an array of names, and array of stocks, a string target
-                 and an integer amount. This function searches names for target and adds
-                 amount to stocks at the same index where target was found in names.
+    public static void printInventory(String[] names, double[] prices, int[] stocks){
+    }
 
-    Post: stocks will be changed by amount if target was found in names
-          "Item not found" will be printed if target was not found in names
-    */
+    /**
+     * Restocks an existing inventory item by adding a given amount to its stock.
+     * <p>
+     * The method searches for {@code target} inside {@code names}. If found at index {@code i},
+     * it increases {@code stocks[i]} by {@code amount}.
+     * </p>
+     *
+     * @param names  array of item names
+     * @param stocks array of item stock quantities (same length as {@code names})
+     * @param target the name of the item to restock
+     * @param amount the amount of stock to add
+     *
+     * @implNote If the target item is not found, the method prints {@code "Item not found"}.
+     */
     public static void restockItem(String[] names, int[] stocks, String target, int amount){
         boolean item_found = false;
 
@@ -122,6 +138,15 @@ public class GroceryManagement {
         }
     }
 
+    /**
+     * Program entry point.
+     * <p>
+     * Creates inventory arrays, displays the menu, and processes user input in a loop
+     * until the user chooses to exit.
+     * </p>
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         String[] item_names = new String[10];
         double[] item_prices= new double[10];

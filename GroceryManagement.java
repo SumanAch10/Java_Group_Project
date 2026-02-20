@@ -56,20 +56,21 @@ public class GroceryManagement {
             }
         }
     }
-<<<<<<< feature-display
 
-
-    /*
-    Function printInventory()
-    Prerequisites: The names, prices, and stocks must be of the same length.
-                   names[i], prices, and stocks[i] refer to the same item
-    
-    Description:
-            Iterates through the arrays and prints only the items which aren't null.
-    
-    Post:
-            Inventory items that are stored are printed.
+       /**
+     * Prints the current inventory items to the console.
+     * <p>
+     * For each index {@code i}, the method prints the item name, price, and stock
+     * if {@code names[i] != null}. Empty slots are skipped.
+     * </p>
+     *
+     * @param names  array of item names
+     * @param prices array of item prices
+     * @param stocks array of item stock quantities
+     *
+     * @implNote This method does not modify any arrays.
      */
+
     public static void printInventory(String[] names, double[] prices, int[] stocks){
         boolean empty = true;
 
@@ -87,25 +88,6 @@ public class GroceryManagement {
                 System.out.println("Inventory is empty.");
             }
         }
-    }
-=======
->>>>>>> main
-
-        /**
-     * Prints the current inventory items to the console.
-     * <p>
-     * For each index {@code i}, the method prints the item name, price, and stock
-     * if {@code names[i] != null}. Empty slots are skipped.
-     * </p>
-     *
-     * @param names  array of item names
-     * @param prices array of item prices
-     * @param stocks array of item stock quantities
-     *
-     * @implNote This method does not modify any arrays.
-     */
-
-    public static void printInventory(String[] names, double[] prices, int[] stocks){
     }
 
     /**

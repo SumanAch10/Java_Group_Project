@@ -2,6 +2,22 @@ import java.util.Scanner;
 
 public class GroceryManagement {
 
+
+    /*
+    Function: displayUI()
+
+    Prerequisites: None.
+
+    Description: Prints a simple menu to the console showing the available
+             inventory system options:
+             1) Add Inventory
+             2) View Inventory
+             3) Restock Inventory
+             4) Exit
+
+    Post: The menu text is displayed to the console. No variables or arrays
+      are modified.
+    ss*/    
     public static void displayUI(){
         System.out.println(".......Choose one of the options....");
         System.out.println("1:Add Inventory: ");
@@ -10,7 +26,23 @@ public class GroceryManagement {
         System.out.println("4:Exit: ");
     }
 
-        public static void addInventory(Scanner sc,String[] names, double[] prices, int[] stocks){
+
+    /*Prerequisites:
+    - sc must be a valid Scanner object.
+    - names, prices, and stocks must be the same length.
+    - names[i], prices[i], and stocks[i] represent the same item.
+    - At least one names[i] must be null to add a new item.
+
+    Description:
+    Searches for the first empty slot in names (where names[i] == null).
+    Prompts the user for item name, price, and stock quantity.
+    Stores the values at the same index in all three arrays.
+
+    Post:
+    - If an empty slot exists, the arrays are updated with the new item.
+    - If no empty slot exists, nothing is changed.
+    */
+    public static void addInventory(Scanner sc,String[] names, double[] prices, int[] stocks){
         // Scanner sc = new Scanner(System.in);
         for(int i = 0;i<names.length;i++){
             if(names[i] == null){

@@ -16,7 +16,7 @@ public class GroceryManagement {
 
     Post: The menu text is displayed to the console. No variables or arrays
       are modified.
-    ss*/    
+    */    
     public static void displayUI(){
         System.out.println(".......Choose one of the options....");
         System.out.println("1:Add Inventory: ");
@@ -43,7 +43,8 @@ public class GroceryManagement {
                 double item_price;
                 int item_stock;
                 System.out.println("------Enter the name:-------");
-                item_name = sc.next();
+                sc.nextLine();
+                item_name = sc.nextLine();
                 System.out.println("------Enter the price:-------");
                 item_price = sc.nextDouble();
                 System.out.println("------Enter the number of stocks:-------");
@@ -81,12 +82,11 @@ public class GroceryManagement {
                 System.out.println("Price: $" + prices[i]);
                 System.out.println("Stock: " + stocks[i]);
                 System.out.println("-----------------------");
-            }
-
-            if (empty) {
+            }  
+        }
+        if (empty) {
                 System.out.println("Inventory is empty.");
             }
-        }
     }
 
     /**
@@ -110,7 +110,7 @@ public class GroceryManagement {
             if (names[i] != null && names[i].equals(target)) {
                 stocks[i] += amount;
                 item_found = true;
-                i = names.length; // exit loop
+                break;
             }
         }
 

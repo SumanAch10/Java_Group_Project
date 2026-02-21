@@ -23,6 +23,7 @@ public class GroceryManagement {
         System.out.println("2:View Inventory: ");
         System.out.println("3:Restock Inventory: ");
         System.out.println("4:Exit: ");
+        System.out.println(".....................................")
     }
 
     /**
@@ -69,7 +70,6 @@ public class GroceryManagement {
      *
      * @implNote This method does not modify any arrays.
      */
-
     public static void printInventory(String[] names, double[] prices, int[] stocks){
         boolean empty = true;
 
@@ -85,6 +85,7 @@ public class GroceryManagement {
 
             if (empty) {
                 System.out.println("Inventory is empty.");
+                break;
             }
         }
     }
@@ -144,8 +145,6 @@ public class GroceryManagement {
 
         while(true){
             if(c == '1'){
-                String name;
-                double price;
                 System.out.println("Inside the add option");
                 addInventory(sc,item_names,item_prices,item_stocks);
             }

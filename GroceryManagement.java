@@ -1,21 +1,34 @@
 import java.util.Scanner;
 
+/**
+ * GroceryManagement handles inventory operations
+ * such as adding, removing, and searching grocery items.
+ *
+ * @author Aayush, Suman, Aiden
+ * @version 1.0
+ */
 public class GroceryManagement {
 
     /**
-    Function: displayUI()
+     * Default Constructor
+     */
+    public GroceryManagement() { }
 
-    Prerequisites: None.
 
-    Description: Prints a simple menu to the console showing the available
-             inventory system options:
-             1) Add Inventory
-             2) View Inventory
-             3) Restock Inventory
-             4) Exit
+    /**
+    * Function: displayUI()
 
-    Post: The menu text is displayed to the console. No variables or arrays
-      are modified.
+    * Prerequisites: None.
+
+    * Description: Prints a simple menu to the console showing the available
+    *         inventory system options:
+    *         1) Add Inventory
+    *         2) View Inventory
+    *         3) Restock Inventory
+    *         4) Exit
+
+    * Post: The menu text is displayed to the console. No variables or arrays
+    *   are modified.
     */    
     public static void displayUI(){
         System.out.println(".......Choose one of the options....");
@@ -69,7 +82,7 @@ public class GroceryManagement {
      * @param prices array of item prices
      * @param stocks array of item stock quantities
      *
-     * @implNote This method does not modify any arrays.
+     * Implementation Note: This method does not modify any arrays.
      */
     public static void printInventory(String[] names, double[] prices, int[] stocks){
         boolean empty = true;
@@ -86,7 +99,6 @@ public class GroceryManagement {
         }
         if (empty) {
                 System.out.println("Inventory is empty.");
-                break;
             }
     }
 
@@ -102,7 +114,7 @@ public class GroceryManagement {
      * @param target the name of the item to restock
      * @param amount the amount of stock to add
      *
-     * @implNote If the target item is not found, the method prints {@code "Item not found"}.
+     * Implementation Note: If the target item is not found, the method prints {@code "Item not found"}.
      */
     public static void restockItem(String[] names, int[] stocks, String target, int amount){
         boolean item_found = false;

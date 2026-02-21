@@ -23,7 +23,7 @@ public class GroceryManagement {
         System.out.println("2:View Inventory: ");
         System.out.println("3:Restock Inventory: ");
         System.out.println("4:Exit: ");
-        System.out.println(".....................................")
+        System.out.println(".....................................");
     }
 
     /**
